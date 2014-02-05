@@ -32,7 +32,7 @@ section
       form.review__details
         .review__details__row
           .review__details__desc
-            textarea(ng-model="review.review").review__details__review
+            textarea(text-angular, ng-model="review.review", ta-toolbar="[['bold','italics']]").review__details__review
           .review__details__details
             label
               strong App Store Link:

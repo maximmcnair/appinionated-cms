@@ -2,6 +2,7 @@
   "name": "Comentorise",
   "version": "0.0.1",
   "dependencies": {
-    "angular-resource": "~1.2.10"
+    "angular-resource": "~1.2.10",
+    "textAngular": "~1.1.2"
   }
 }

@@ -21,7 +21,7 @@ body{color:#fff;background-color:#233445;margin:0}
 .wrapper{max-width:940px;margin:0 auto;zoom:1}
 .wrapper:before,.wrapper:after{content:"";display:table}
 .wrapper:after{clear:both}
-a.btn,.btn,.review__details__save,.review__details__update{padding:15px 30px;-webkit-border-radius:4px;border-radius:4px;display:inline-block;background-color:#233445;color:#fff;font-size:18px;font-weight:800;border:1px solid #fff;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;-ms-transition:all 1s;transition:all 1s;cursor:pointer;}
+a.btn,.btn,.review__details__save,.review__details__update{padding:15px 30px;-webkit-border-radius:4px;border-radius:4px;display:inline-block;background-color:#233445;color:#fff;font-size:18px;font-weight:800;border:1px solid #fff;-webkit-transition:all .3s;-moz-transition:all .3s;-o-transition:all .3s;-ms-transition:all .3s;transition:all .3s;cursor:pointer;}
 a.btn:hover,.btn:hover,.review__details__save:hover,.review__details__update:hover{background-color:#fff;color:#233445}
 .input-clear,textarea,input{outline:0;border:0;background:transparent}
 .list-no-style{list-style-type:none;margin:0;padding:0}
