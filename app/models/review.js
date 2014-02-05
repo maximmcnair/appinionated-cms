@@ -81,4 +81,40 @@ module.exports = function (logger, connection) {
     }
   })
 
+  ReviewModel.findOne({ title: 'Duolingo'}, function (err, doc){
+   if(doc === null){
+      var newReview = new ReviewModel({
+        title: 'Duolingo'
+      , review: 'Offering free courses in Spanish, English, French, German, Portuguese, Italian. Duolingo creates a gamified experience for learning a new language, incorporating speaking, writing and listening for a well rounded learning experience.'
+      , colorBg: '1CB0F6'
+      , colorText: 'ffffff'
+      , hrefStore: 'https://itunes.apple.com/gb/app/duolingo-learn-languages-for/id570060128?mt=8'
+      , published: true
+      })
+
+      newReview.save(function (err, project) {
+        if(err) console.log(err)
+        console.log(project)
+      })
+    }
+  })
+
+  ReviewModel.findOne({ title: 'Duolingo'}, function (err, doc){
+   if(doc === null){
+      var newReview = new ReviewModel({
+        title: 'Rechner'
+      , review: 'Touted as "the world\'s first gesture based calculator\' Rechner uses swipe gestures to trigger mathematical operations. Swipe left for addition, right for subtraction. Designed by Berger & Föhr, the only changed I\'d like to see them add would be the option to add your own custom color.'
+      , colorBg: 'FCFC02'
+      , colorText: 'ffffff'
+      , hrefStore: 'https://itunes.apple.com/us/app/rechner-calculator/id508837827?mt=8'
+      , published: true
+      })
+
+      newReview.save(function (err, project) {
+        if(err) console.log(err)
+        console.log(project)
+      })
+    }
+  })
+
 }

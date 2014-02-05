@@ -22,4 +22,21 @@ module.exports = function (app, options) {
     })
   })
 
+  // Update Project
+  app.put(url, function (req, res) {
+    console.log('edit review', req.body)
+    ReviewModel.findById(req.body._id, function (err, review) {
+      console.log('review', review)
+      if(err) res.json(err)
+      var key
+      for (key in req.body) {
+        review[key] = req.body[key]
+      }
+      review.save(function (err) {
+        if(err) res.json(err, 404)
+        res.json(review, 201)
+      })
+    })
+  })
+
 }

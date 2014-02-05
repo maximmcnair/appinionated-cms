@@ -21,8 +21,8 @@ body{color:#fff;background-color:#233445;margin:0}
 .wrapper{max-width:940px;margin:0 auto;zoom:1}
 .wrapper:before,.wrapper:after{content:"";display:table}
 .wrapper:after{clear:both}
-a.btn,.btn,.review__details__save{padding:15px 30px;margin-right:10px;-webkit-border-radius:4px;border-radius:4px;display:inline-block;background-color:#233445;color:#fff;font-size:18px;font-weight:800;border:1px solid #fff;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;-ms-transition:all 1s;transition:all 1s;cursor:pointer;}
-a.btn:hover,.btn:hover,.review__details__save:hover{background-color:#fff;color:#233445}
+a.btn,.btn,.review__details__save,.review__details__update{padding:15px 30px;-webkit-border-radius:4px;border-radius:4px;display:inline-block;background-color:#233445;color:#fff;font-size:18px;font-weight:800;border:1px solid #fff;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;-ms-transition:all 1s;transition:all 1s;cursor:pointer;}
+a.btn:hover,.btn:hover,.review__details__save:hover,.review__details__update:hover{background-color:#fff;color:#233445}
 .input-clear,textarea,input{outline:0;border:0;background:transparent}
 .list-no-style{list-style-type:none;margin:0;padding:0}
 .form-err{display:none}
@@ -32,6 +32,10 @@ label:before,label:after{content:"";display:table}
 label:after{clear:both}
 label strong{display:block}
 label input{padding:0;font-size:14px;display:block;width:100%}
+::-webkit-input-placeholder{color:#fff}
+:-moz-placeholder{color:#fff}
+::-moz-placeholder{color:#fff}
+:-ms-input-placeholder{color:#fff}
 .header-main{height:30px;padding:10px 0}
 .header__title{float:left;margin:0}
 .header__review-add{float:right;margin:0}
@@ -46,7 +50,7 @@ label input{padding:0;font-size:14px;display:block;width:100%}
 .review__details__row:after{clear:both}
 .review__details__desc{width:57.446808510638306%;float:left}
 .review__details__details{width:31.914893617021278%;float:right}
-.review__details__save{float:right}
+.review__details__save,.review__details__update{float:right}
 .review__details__review{width:100%;max-width:100%;min-height:250px;max-height:250px}
 .pull-left{float:left}
 .pull-right{float:right}
