@@ -1,0 +1,41 @@
+!!! 5
+
+html(ng-app="myApp")
+
+  head
+    title Appinionated CMS
+    link(rel="stylesheet", href='/css/main.css')
+
+  body
+    div.main-container(ng-view)
+
+    //- Libs
+    script(src="/js/libs/jquery-1.8.2.min.js")
+    script(src='/js/libs/underscore.js')
+
+    //- AngularJS
+    script(src="/js/libs/angularjs/angular.min.js")
+    script(src="/js/libs/angularjs/angular-cookies.min.js")
+    script(src="/js/libs/angularjs/angular-route.min.js")
+    script(src="/js/libs/angularjs/angular-sanitize.min.js")
+    script(src="/js/libs/angularjs/angular-animate.min.js")
+    script(src="/js/libs/angularjs/angular-cookies.min.js")
+
+    //- AngularJS App
+    script(src="/js/routingConfig.js")
+    script(src="/js/app.js")
+
+    //- AngularJS Controllers
+    script(src="/js/controllers/controllers.js")
+    script(src="/js/controllers/auth-controller.js")
+    script(src="/js/controllers/admin-controller.js")
+    script(src="/js/controllers/nav-controller.js")
+
+    //- AngularJS Filters
+    script(src="/js/filters.js")
+
+    //- AngularJS Services
+    script(src="/js/services.js")
+
+    //- AngularJS Directives
+    script(src="/js/directives/directives.js")

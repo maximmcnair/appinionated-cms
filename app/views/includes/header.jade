@@ -1,0 +1,11 @@
+.header-container(ng-controller="NavCtrl")
+  div(ng-if="isLoggedIn")
+    ul
+      li
+        a(ng-click="logout()",href='/auth/log-out') Sign Out
+
+    p(ng-bind="user.username")
+  div(ng-if="!isLoggedIn")
+    //- ul
+    //-   li
+        //- a(href='/sign-up') Register

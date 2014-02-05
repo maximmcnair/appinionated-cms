@@ -1,0 +1,65 @@
+!!! 5
+
+html(ng-app="myApp")
+
+  head
+    title Synth MEAN
+    link(rel="stylesheet", href='/css/main.css')
+
+    script.
+      (function() {
+        var config = {
+          kitId: 'jja4ieg'
+        };
+        var d = false;
+        var tk = document.createElement('script');
+        tk.src = '//use.typekit.net/' + config.kitId + '.js';
+        tk.type = 'text/javascript';
+        tk.async = 'true';
+        tk.onload = tk.onreadystatechange = function() {
+          var rs = this.readyState;
+          if (d || rs && rs != 'complete' && rs != 'loaded') return;
+          d = true;
+          try { Typekit.load(config); } catch (e) {}
+        };
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(tk, s);
+      })();
+
+  body
+    include includes/header
+
+    block content
+
+    //- Libs
+    script(src="/js/libs/jquery-1.8.2.min.js")
+    script(src='/js/libs/underscore.js')
+
+    //- AngularJS
+    script(src="/js/libs/angularjs/angular.min.js")
+    script(src="/js/libs/angularjs/angular-cookies.min.js")
+    script(src="/js/libs/angularjs/angular-route.min.js")
+    script(src="/js/libs/angularjs/angular-sanitize.min.js")
+    script(src="/js/libs/angularjs/angular-animate.min.js")
+    script(src="/js/libs/angularjs/angular-cookies.min.js")
+    script(src="/bower_components/angular-resource/angular-resource.min.js")
+
+    //- AngularJS App
+    script(src="/js/routingConfig.js")
+    script(src="/js/app.js")
+
+    //- AngularJS Controllers
+    script(src="/js/controllers/controllers.js")
+    script(src="/js/controllers/auth-controller.js")
+    script(src="/js/controllers/admin-controller.js")
+    script(src="/js/controllers/nav-controller.js")
+
+    //- AngularJS Filters
+    script(src="/js/filters.js")
+
+    //- AngularJS Services
+    script(src="/js/services.js")
+    script(src="/js/services/review.js")
+
+    //- AngularJS Directives
+    script(src="/js/directives/directives.js")

@@ -1,0 +1,13 @@
+box: wercker/ubuntu12.04-nodejs0.10
+
+services:
+  - wercker/mongodb
+
+build:
+  steps:
+    - domudall/nave@0.0.4:
+        node-version: 0.10.6
+
+    - npm-install
+
+    - npm-test
