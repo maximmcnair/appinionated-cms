@@ -5,9 +5,11 @@ header.header-main
     strong(ng-click="triggerAddReviewWidget()", ng-if="showAddReviewWidget").header__review-add Close
 
 section(ng-class="{'review-add--open':showAddReviewWidget}").review-add
-  .wrapper
-    form.review__details
-      input(ng-model="newReview.title", placeholder="Title").review__title__input
+  form.review__details
+    .review__preview(style="background-color: #{{newReview.colorBg}};")
+      .wrapper
+        input(ng-model="newReview.title", placeholder="Title", style="color: #{{newReview.colorText}};").review__title__input
+    .wrapper
       .review__details__row
         .review__details__desc
           //- textarea(ng-model="newReview.review", placeholder="Review").review__details__review

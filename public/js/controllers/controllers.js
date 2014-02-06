@@ -6,6 +6,14 @@ function HomeCtrl($scope, ReviewFactory) {
     // console.log(raps)
   })
 
+  var reviewTemp = {
+    title: 'title'
+  , review: 'Review'
+  , colorBg: 'ffffff'
+  , colorText: '454545'
+  }
+
+  $scope.newReview = reviewTemp
 
   //========================================================
   //  Post Review
@@ -14,7 +22,7 @@ function HomeCtrl($scope, ReviewFactory) {
     var newReview = new ReviewFactory(data)
     newReview.$save({}, function (res) {
       console.log('success', res)
-      $scope.newReview = ''
+      $scope.newReview = reviewTemp
       $scope.showAddReviewWidget = false
       $scope.reviews.push(newReview)
     })
