@@ -8,7 +8,7 @@ function HomeCtrl($scope, ReviewFactory) {
 
   var reviewTemp = {
     title: 'title'
-  , review: 'Review'
+  , review: '<p>Review</p>'
   , colorBg: 'ffffff'
   , colorText: '454545'
   }
