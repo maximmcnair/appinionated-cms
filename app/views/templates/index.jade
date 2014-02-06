@@ -9,30 +9,30 @@ section.landing
   .wrapper
     h1.landing-header Appinionated
     p.landing-desc
-      | We feature only the best designed apps &amp; games for the iPhone.
+      | We feature only the best designed apps for the iPhone.
 
-    .follow-btn
-      a(href="https://twitter.com/appinionated_", data-show-count="false", data-lang="en").twitter-follow-button Follow @appinionated_
+    //- .follow-btn
+    //-   a(href="https://twitter.com/appinionated_", data-show-count="false", data-lang="en").twitter-follow-button Follow @appinionated_
 
-    .social-links
-      .fb-like(data-href="http://www.appinionated.co.uk/", data-colorscheme="light", data-layout="button_count", data-action="like", data-show-faces="false", data-send="false")
-      a(href="https://twitter.com/share", data-url="http://www.appinionated.co.uk/", data-via="appinionated_").twitter-share-button Tweet
+    //- .social-links
+    //-   .fb-like(data-href="http://www.appinionated.co.uk/", data-colorscheme="light", data-layout="button_count", data-action="like", data-show-faces="false", data-send="false")
+    //-   a(href="https://twitter.com/share", data-url="http://www.appinionated.co.uk/", data-via="appinionated_").twitter-share-button Tweet
 
     p
       a(href="mailto:submit@appinionated.co.uk?subject=Here's%20my%20app&body=Remember to send us a redeem code if it's a priced app.").mail-to
         |Send us your app
 
-  .keyboard-nav
-    .up
-      i.icon-arrow-up
-    .left
-    .down
-      i.icon-arrow-down
-    .right
+  //- .keyboard-nav
+  //-   .up
+  //-     i.icon-arrow-up
+  //-   .left
+  //-   .down
+  //-     i.icon-arrow-down
+  //-   .right
 
   a(href="/#tall-chess").phone--top
   a(href="/#thinglist").phone--bottom
-  .arrow-down.js-review-first
+  //- .arrow-down.js-review-first
 
 
 section(ng-repeat="review in reviews", style="background-color: #{{review.colorBg}}; color: #{{review.colorText}};", ng-if="review.published").review.review--portrait.review--phone--dark
