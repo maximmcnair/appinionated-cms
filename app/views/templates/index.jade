@@ -4,7 +4,7 @@ header.header-main
     strong(ng-click="triggerAddReviewWidget()", ng-if="!showAddReviewWidget").header__review-add Add Review
     strong(ng-click="triggerAddReviewWidget()", ng-if="showAddReviewWidget").header__review-add Close
 
-section(ng-if="showAddReviewWidget")
+section(ng-class="{'review-add--open':showAddReviewWidget}").review-add
   .wrapper
     form.review__details
       input(ng-model="newReview.title", placeholder="Title").review__title__input

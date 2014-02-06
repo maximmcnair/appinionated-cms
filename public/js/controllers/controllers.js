@@ -32,6 +32,7 @@ function HomeCtrl($scope, ReviewFactory) {
   }
   $scope.triggerAddReviewWidget = function () {
     $scope.showAddReviewWidget = !$scope.showAddReviewWidget
+    $scope.selected = ''
   }
 
   //========================================================
@@ -43,6 +44,7 @@ function HomeCtrl($scope, ReviewFactory) {
     // if($scope.selected === item){
     //   $scope.selected = ''
     // } else {
+      $scope.showAddReviewWidget = false
       $scope.selected = item
     // }
   }

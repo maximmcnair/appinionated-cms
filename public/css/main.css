@@ -42,6 +42,8 @@ label input{padding:0;font-size:14px;display:block;width:100%}
 .header__review-add{float:right;margin:0}
 .review__preview{padding:20px 0;-webkit-transition:background-color .3s;-moz-transition:background-color .3s;-o-transition:background-color .3s;-ms-transition:background-color .3s;transition:background-color .3s}
 .review__title{margin:0}
+.review-add{height:0;-webkit-transition:height .3s;-moz-transition:height .3s;-o-transition:height .3s;-ms-transition:height .3s;transition:height .3s;overflow:hidden}
+.review-add--open{height:355px}
 .review{-webkit-transition:height .3s;-moz-transition:height .3s;-o-transition:height .3s;-ms-transition:height .3s;transition:height .3s;overflow:hidden;height:94px}
 .review--open{height:449px}
 .review__details{padding:20px 0;height:355px}
