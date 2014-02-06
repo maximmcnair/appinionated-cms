@@ -99,13 +99,13 @@ module.exports = function (logger, connection) {
     }
   })
 
-  ReviewModel.findOne({ title: 'Duolingo'}, function (err, doc){
+  ReviewModel.findOne({ title: 'Rechner'}, function (err, doc){
    if(doc === null){
       var newReview = new ReviewModel({
         title: 'Rechner'
       , review: 'Touted as "the world\'s first gesture based calculator\' Rechner uses swipe gestures to trigger mathematical operations. Swipe left for addition, right for subtraction. Designed by Berger & Föhr, the only changed I\'d like to see them add would be the option to add your own custom color.'
       , colorBg: 'FCFC02'
-      , colorText: 'ffffff'
+      , colorText: '454545'
       , hrefStore: 'https://itunes.apple.com/us/app/rechner-calculator/id508837827?mt=8'
       , published: true
       })

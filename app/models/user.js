@@ -159,4 +159,22 @@ module.exports = function (logger, connection) {
   }
 
   connection.model('User', UserSchema)
+
+  UserModel = connection.model('User')
+
+  UserModel.findOne({ title: 'Film Alphabets'}, function (err, doc){
+   if(doc === null){
+      var newUser = new UserModel({
+        name: 'Leonardo'
+      , email: 'leonardofox@gmail.com'
+      , username: 'leonardofox'
+      , password: 'password'
+      })
+
+      newUser.save(function (err, user) {
+        if(err) console.log(err)
+        console.log(user)
+      })
+    }
+  })
 }
