@@ -46,7 +46,7 @@ module.exports = function (app, options, passport) {
         }
 
         req.session.cookie.maxAge = 1000 * 60 * 60 * 24 * 24;
-        res.json(200, { 'role': user.role, 'username': user.username , '_id': user._id })
+        res.redirect('/cms')
       });
     })(req, res, next)
 
@@ -84,7 +84,7 @@ module.exports = function (app, options, passport) {
 
   app.get('/auth/log-out', function (req, res) {
     req.logout()
-    res.send(200);
+    res.redirect('/')
   })
 
   app.get('/auth/forgot', function (req, res) {

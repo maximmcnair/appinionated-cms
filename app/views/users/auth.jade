@@ -1,14 +1,41 @@
-extends ../layout
+!!! 5
 
-block content
-  .row
-    .offset1.span5
-    .span6
-      if (typeof errors !== 'undefined')
-        .fade.in.alert.alert-block.alert-error
-          a.close(data-dismiss='alert', href='javascript:void(0)') x
-          ul
-            each error in errors
-              li= error.type
+html(ng-app="myApp")
 
-      block auth
+  head
+    title Appinionated CMS
+    link(rel="stylesheet", href='/css/cms.css')
+    link(rel='stylesheet prefetch', href='http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css')
+
+    script.
+      (function() {
+        var config = {
+          kitId: 'jja4ieg'
+        };
+        var d = false;
+        var tk = document.createElement('script');
+        tk.src = '//use.typekit.net/' + config.kitId + '.js';
+        tk.type = 'text/javascript';
+        tk.async = 'true';
+        tk.onload = tk.onreadystatechange = function() {
+          var rs = this.readyState;
+          if (d || rs && rs != 'complete' && rs != 'loaded') return;
+          d = true;
+          try { Typekit.load(config); } catch (e) {}
+        };
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(tk, s);
+      })();
+
+  body
+    .row
+      .offset1.span5
+      .span6
+        if (typeof errors !== 'undefined')
+          .fade.in.alert.alert-block.alert-error
+            a.close(data-dismiss='alert', href='javascript:void(0)') x
+            ul
+              each error in errors
+                li= error.type
+
+        block auth

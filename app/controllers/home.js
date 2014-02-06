@@ -11,18 +11,22 @@ module.exports = function (app, options) {
 
 
   app.get('/cms/', function (req, res) {
-    if(req.user) {
-      role = req.user.role;
-      username = req.user.username;
-      _id = req.user._id;
-      
-      res.cookie('user', JSON.stringify({
-        'username': username,
-        'role': role,
-        '_id': _id
-      }))
+    if (req.isAuthenticated()) {
+      if(req.user) {
+        role = req.user.role;
+        username = req.user.username;
+        _id = req.user._id;
+
+        res.cookie('user', JSON.stringify({
+          'username': username,
+          'role': role,
+          '_id': _id
+        }))
+      }
+      res.render('cms')
+    } else {
+      res.redirect('/sign-in')
     }
-    res.render('cms')
   })
 
   app.get('/*', function (req, res) {
@@ -30,7 +34,7 @@ module.exports = function (app, options) {
     //   role = req.user.role;
     //   username = req.user.username;
     //   _id = req.user._id;
-      
+
     //   res.cookie('user', JSON.stringify({
     //     'username': username,
     //     'role': role,
@@ -40,5 +44,5 @@ module.exports = function (app, options) {
     res.render('home')
   })
 
- 
+
 }

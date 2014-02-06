@@ -14,6 +14,8 @@ angular.module('myApp',
 
     var access = routingConfig.accessLevels;
 
+    console.log(access)
+
     $routeProvider.
       when('/cms/', {
         templateUrl  : 'templates/cms.jade',
@@ -47,10 +49,10 @@ angular.module('myApp',
       $rootScope.error = null;
 
       if (!Auth.authorize(next.access)) {
-
-        if(Auth.isLoggedIn())               $location.path('/');
-        else if(next.access.bitMask === 4 ) $location.path('/');
-        else                                $location.path('/sign-in');
+        console.log(Auth.isLoggedIn())
+        if(Auth.isLoggedIn())               $location.path('/cms/');
+        else if(next.access.bitMask === 4 ) $location.path('/cms/');
+        else                                $location.path('/cms/sign-in');
       }
 
     })
