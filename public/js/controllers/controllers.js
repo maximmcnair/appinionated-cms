@@ -7,8 +7,8 @@ function HomeCtrl($scope, ReviewFactory) {
   })
 
   var reviewTemp = {
-    title: 'title'
-  , review: '<p>Review</p>'
+    title: 'New App Title'
+  , review: '<p>Write your review here.</p>'
   , colorBg: 'ffffff'
   , colorText: '454545'
   }
