@@ -246,6 +246,7 @@ input[type=checkbox]:checked:before {
   -ms-transition: background-color 0.3s;
   transition: background-color 0.3s;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .review__title {
   margin: 0px;
