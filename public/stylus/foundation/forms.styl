@@ -45,7 +45,35 @@ label
   color #ffffff
 :-moz-placeholder
   color #ffffff
-::-moz-placeholder 
+::-moz-placeholder
   color #ffffff
 :-ms-input-placeholder
   color #ffffff
+
+input[type=checkbox]
+  -webkit-transition all .3s ease-in
+  -webkit-appearance none
+  background #FF8080
+  width 31px
+  height 31px
+  border-radius 50%
+  position relative
+  display inline-block
+  line-height 18px
+  &:before
+    font-family FontAwesome
+    content '\f00d'
+    position absolute
+    top 7px
+    left 10px
+  &:checked
+    background #A5D79E
+  &:checked:before
+    content '\f00c'
+    left 9px
+
+.checkbox
+  strong
+    vertical-align: 13px;
+    margin-left: 8px;
+    display inline

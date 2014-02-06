@@ -37,13 +37,18 @@ label input{padding:0;font-size:14px;display:block;width:100%}
 :-moz-placeholder{color:#fff}
 ::-moz-placeholder{color:#fff}
 :-ms-input-placeholder{color:#fff}
+input[type=checkbox]{-webkit-transition:all .3s ease-in;-webkit-appearance:none;background:#ff8080;width:31px;height:31px;-webkit-border-radius:50%;border-radius:50%;position:relative;display:inline-block;line-height:18px;}
+input[type=checkbox]:before{font-family:FontAwesome;content:'\f00d';position:absolute;top:7px;left:10px}
+input[type=checkbox]:checked{background:#a5d79e}
+input[type=checkbox]:checked:before{content:'\f00c';left:9px}
+.checkbox strong{vertical-align:13px;margin-left:8px;display:inline}
 .header-main{height:30px;padding:10px 0}
 .header__title{float:left;margin:0}
 .header__review-add{float:right;margin:0}
 .review__preview{padding:20px 0;-webkit-transition:background-color .3s;-moz-transition:background-color .3s;-o-transition:background-color .3s;-ms-transition:background-color .3s;transition:background-color .3s}
 .review__title{margin:0}
 .review-add{height:0;-webkit-transition:height .3s;-moz-transition:height .3s;-o-transition:height .3s;-ms-transition:height .3s;transition:height .3s;overflow:hidden}
-.review-add--open{height:355px}
+.review-add--open{height:455px}
 .review{-webkit-transition:height .3s;-moz-transition:height .3s;-o-transition:height .3s;-ms-transition:height .3s;transition:height .3s;overflow:hidden;height:94px}
 .review--open{height:449px}
 .review__details{padding:20px 0;height:355px}

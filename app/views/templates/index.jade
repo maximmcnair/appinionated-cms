@@ -13,6 +13,9 @@ section(ng-class="{'review-add--open':showAddReviewWidget}").review-add
           //- textarea(ng-model="newReview.review", placeholder="Review").review__details__review
           div(text-angular="text-angular", ng-model="newReview.review", ta-toolbar="[['bold', 'italics', 'p', 'insertLink', 'unlink']]")
         .review__details__details
+          label.checkbox
+            strong Published:
+              input(type="text", ng-model="newReview.published")
           label
             strong App Store Link:
             input(type="text", ng-model="newReview.hrefStore")
@@ -36,6 +39,9 @@ section
           .review__details__desc
             div(text-angular, ng-model="review.review", ta-toolbar="[['bold', 'italics', 'p', 'insertLink', 'unlink']]").review__details__review
           .review__details__details
+            label.checkbox
+              input(type="checkbox", ng-model="review.published")
+              strong Published
             label
               strong App Store Link:
               input(type="text", ng-model="review.hrefStore")
