@@ -22,7 +22,7 @@ section(ng-if="showAddReviewWidget")
             strong Text Color:
             input(type="text", ng-model="newReview.colorText")
       .review__details__row
-        a(ng-click="saveReview(review)").review__details__save Save
+        a(ng-click="postReview(newReview)").review__details__save Post
 
 section
   article(ng-repeat="review in reviews", ng-click="openRAP(review)", ng-class="{'review--open':isSelected(review)}").review

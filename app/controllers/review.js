@@ -22,9 +22,17 @@ module.exports = function (app, options) {
     })
   })
 
+  // Post Project
+  app.post(url, function (req, res) {
+    var newReview = new ReviewModel(req.body)
+    newReview.save(function (err) {
+      if(err) res.json(err, 404)
+      res.json(newReview, 201)
+    })
+  })
+
   // Update Project
   app.put(url, function (req, res) {
-    console.log('edit review', req.body)
     ReviewModel.findById(req.body._id, function (err, review) {
       console.log('review', review)
       if(err) res.json(err)

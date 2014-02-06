@@ -6,6 +6,20 @@ function HomeCtrl($scope, ReviewFactory) {
     // console.log(raps)
   })
 
+
+  //========================================================
+  //  Post Review
+  //========================================================
+  $scope.postReview = function (data) {
+    var newReview = new ReviewFactory(data)
+    newReview.$save({}, function (res) {
+      console.log('success', res)
+      $scope.newReview = ''
+      $scope.showAddReviewWidget = false
+      $scope.reviews.push(newReview)
+    })
+  }
+
   //========================================================
   //  Add review widget
   //========================================================
