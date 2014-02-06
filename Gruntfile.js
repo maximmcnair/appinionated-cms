@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       }
     , watch:
       { stylus:
-        { files: ['public/stylus/**/**/**.styl']
+        { files: ['public/stylus/**/**/**/**.styl']
         , tasks: 'stylus'
         , options: { livereload: true }
         }
