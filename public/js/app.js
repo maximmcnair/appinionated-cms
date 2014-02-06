@@ -8,10 +8,14 @@ angular.module('myApp',
   ]).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
-    $routeProvider.
-      when('/', {
+    $routeProvider
+      .when('/', {
         templateUrl  : 'templates/index',
         controller   : 'HomeCtrl'
+      })
+      .when('/review/:slug', {
+        templateUrl  : 'templates/index',
+        controller   : 'ReviewCtrl'
       })
       .otherwise({
         redirectTo: '/'

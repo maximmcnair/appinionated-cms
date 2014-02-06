@@ -41,14 +41,8 @@ section(ng-repeat="review in reviews", style="background-color: #{{review.colorB
       .review__images
         .review__image__wrapper
           ul.slides
-            li
-              img(src="/imgs/duolingo/duolingo-1.jpg")
-            li
-              img(src="/imgs/duolingo/duolingo-2.jpg")
-            li
-              img(src="/imgs/duolingo/duolingo-3.jpg")
-            li
-              img(src="/imgs/duolingo/duolingo-4.jpg")
+            li(ng-repeat="image in review.images track by $index")
+              img(src="{{image}}")
       .review__desc
         h2(ng-bind="review.title")
         div(ng-bind-html="review.review")
