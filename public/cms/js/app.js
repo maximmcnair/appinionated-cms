@@ -16,7 +16,7 @@ angular.module('myApp',
 
     $routeProvider.
       when('/cms/', {
-        templateUrl  : 'templates/index',
+        templateUrl  : 'templates/cms.jade',
         controller   : HomeCtrl,
         access       : access.user
       })

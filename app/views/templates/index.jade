@@ -1,57 +1,55 @@
-header.header-main
+.container.home
+//- header.header
+//-   .wrapper
+//-     a(href="/") Home
+//-     a(href="/#tags") Tags
+//-     a(href="/#submit") Submit
+
+section.landing
   .wrapper
-    h1.header__title Appinionated CMS
-    strong(ng-click="triggerAddReviewWidget()", ng-if="!showAddReviewWidget").header__review-add Add Review
-    strong(ng-click="triggerAddReviewWidget()", ng-if="showAddReviewWidget").header__review-add Close
+    h1.landing-header Appinionated
+    p.landing-desc
+      | We feature only the best designed apps &amp; games for the iPhone.
 
-section(ng-class="{'review-add--open':showAddReviewWidget}").review-add
-  form.review__details
-    .review__preview(style="background-color: #{{newReview.colorBg}};")
-      .wrapper
-        input(ng-model="newReview.title", placeholder="Title", style="color: #{{newReview.colorText}};").review__title__input
-    .wrapper
-      .review__details__row
-        .review__details__desc
-          //- textarea(ng-model="newReview.review", placeholder="Review").review__details__review
-          div(text-angular="text-angular", ng-model="newReview.review", ta-toolbar="[['bold', 'italics', 'p', 'insertLink', 'unlink']]")
-        .review__details__details
-          label.checkbox
-            input(type="checkbox", ng-model="newReview.published")
-            strong Published
-          label
-            strong App Store Link:
-            input(type="text", ng-model="newReview.hrefStore")
-          label
-            strong Background Color:
-            input(type="text", ng-model="newReview.colorBg")
-          label
-            strong Text Color:
-            input(type="text", ng-model="newReview.colorText")
-      .review__details__row
-        a(ng-click="postReview(newReview)").review__details__save Post
+    .follow-btn
+      a(href="https://twitter.com/appinionated_", data-show-count="false", data-lang="en").twitter-follow-button Follow @appinionated_
 
-section
-  article(ng-repeat="review in reviews", ng-click="openRAP(review)", ng-class="{'review--open':isSelected(review)}").review
-    .review__preview(style="background-color: #{{review.colorBg}}; color: #{{review.colorText}};")
-      .wrapper
-        h2(ng-bind="review.title").review__title
+    .social-links
+      .fb-like(data-href="http://www.appinionated.co.uk/", data-colorscheme="light", data-layout="button_count", data-action="like", data-show-faces="false", data-send="false")
+      a(href="https://twitter.com/share", data-url="http://www.appinionated.co.uk/", data-via="appinionated_").twitter-share-button Tweet
+
+    p
+      a(href="mailto:submit@appinionated.co.uk?subject=Here's%20my%20app&body=Remember to send us a redeem code if it's a priced app.").mail-to
+        |Send us your app
+
+  .keyboard-nav
+    .up
+      i.icon-arrow-up
+    .left
+    .down
+      i.icon-arrow-down
+    .right
+
+  a(href="/#tall-chess").phone--top
+  a(href="/#thinglist").phone--bottom
+  .arrow-down.js-review-first
+
+
+section(ng-repeat="review in reviews", style="background-color: #{{review.colorBg}}; color: #{{review.colorText}};", ng-if="review.published").review.review--portrait.review--phone--dark
+  .review__preview
     .wrapper
-      form.review__details
-        .review__details__row
-          .review__details__desc
-            div(text-angular, ng-model="review.review", ta-toolbar="[['bold', 'italics', 'p', 'insertLink', 'unlink']]").review__details__review
-          .review__details__details
-            label.checkbox
-              input(type="checkbox", ng-model="review.published")
-              strong Published
-            label
-              strong App Store Link:
-              input(type="text", ng-model="review.hrefStore")
-            label
-              strong Background Color:
-              input(type="text", ng-model="review.colorBg")
-            label
-              strong Text Color:
-              input(type="text", ng-model="review.colorText")
-        .review__details__row
-          a(ng-click="updateReview(review)").review__details__update Update
+      .review__images
+        .review__image__wrapper
+          ul.slides
+            li
+              img(src="/imgs/duolingo/duolingo-1.jpg")
+            li
+              img(src="/imgs/duolingo/duolingo-2.jpg")
+            li
+              img(src="/imgs/duolingo/duolingo-3.jpg")
+            li
+              img(src="/imgs/duolingo/duolingo-4.jpg")
+      .review__desc
+        h2(ng-bind="review.title")
+        div(ng-bind-html="review.review")
+        a(href="https://itunes.apple.com/gb/app/duolingo-learn-languages-for/id570060128?mt=8", target="_blank", onclick="_gaq.push(['_trackEvent','app_link','Duolingo'])").btn View App
