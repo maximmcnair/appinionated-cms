@@ -14,8 +14,8 @@ section(ng-class="{'review-add--open':showAddReviewWidget}").review-add
           div(text-angular="text-angular", ng-model="newReview.review", ta-toolbar="[['bold', 'italics', 'p', 'insertLink', 'unlink']]")
         .review__details__details
           label.checkbox
-            strong Published:
-              input(type="text", ng-model="newReview.published")
+            input(type="checkbox", ng-model="newReview.published")
+            strong Published
           label
             strong App Store Link:
             input(type="text", ng-model="newReview.hrefStore")
