@@ -32,27 +32,4 @@ section(ng-class="{'review-add--open':showAddReviewWidget}").review-add
         a(ng-click="postReview(newReview)").review__details__save Post
 
 section
-  article(ng-repeat="review in reviews", ng-click="openRAP(review)", ng-class="{'review--open':isSelected(review)}").review
-    .review__preview(style="background-color: #{{review.colorBg}}; color: #{{review.colorText}};")
-      .wrapper
-        h2(ng-bind="review.title").review__title
-    .wrapper
-      form.review__details
-        .review__details__row
-          .review__details__desc
-            div(text-angular, ng-model="review.review", ta-toolbar="[['bold', 'italics', 'p', 'insertLink', 'unlink']]").review__details__review
-          .review__details__details
-            label.checkbox
-              input(type="checkbox", ng-model="review.published")
-              strong Published
-            label
-              strong App Store Link:
-              input(type="text", ng-model="review.hrefStore")
-            label
-              strong Background Color:
-              input(type="text", ng-model="review.colorBg")
-            label
-              strong Text Color:
-              input(type="text", ng-model="review.colorText")
-        .review__details__row
-          a(ng-click="updateReview(review)").review__details__update Update
+  review(ng-repeat="review in reviews", ng-click="openRAP(review)", ng-class="{'review--open':isSelected(review)}").review

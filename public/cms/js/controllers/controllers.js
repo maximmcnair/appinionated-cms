@@ -32,12 +32,6 @@ function HomeCtrl($scope, ReviewFactory) {
   //  Add review widget
   //========================================================
   $scope.showAddReviewWidget = false
-  $scope.updateReview = function (data) {
-    var newReview = new ReviewFactory(data)
-    newReview.$update({}, function (res) {
-      console.log('success', res)
-    })
-  }
   $scope.triggerAddReviewWidget = function () {
     $scope.showAddReviewWidget = !$scope.showAddReviewWidget
     $scope.selected = ''
