@@ -5,6 +5,7 @@ html(ng-app="myApp")
   head
     title Synth MEAN
     link(rel="stylesheet", href='/css/main.css')
+    link(rel='stylesheet prefetch', href='http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css')
 
     script.
       (function() {
@@ -36,13 +37,20 @@ html(ng-app="myApp")
     script(src='/js/libs/underscore.js')
 
     //- AngularJS
-    script(src="/js/libs/angularjs/angular.min.js")
-    script(src="/js/libs/angularjs/angular-cookies.min.js")
-    script(src="/js/libs/angularjs/angular-route.min.js")
-    script(src="/js/libs/angularjs/angular-sanitize.min.js")
-    script(src="/js/libs/angularjs/angular-animate.min.js")
-    script(src="/js/libs/angularjs/angular-cookies.min.js")
+    //- script(src="/js/libs/angularjs/angular.min.js")
+    //- script(src="/js/libs/angularjs/angular-cookies.min.js")
+    //- script(src="/js/libs/angularjs/angular-route.min.js")
+    //- script(src="/js/libs/angularjs/angular-sanitize.min.js")
+    //- script(src="/js/libs/angularjs/angular-animate.min.js")
+    //- script(src="/js/libs/angularjs/angular-cookies.min.js")
+    //- script(src="/bower_components/angular/angular.min.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js")
+    script(src="/bower_components/angular-sanitize/angular-sanitize.min.js")
+    script(src="/bower_components/angular-route/angular-route.min.js")
+    script(src="/bower_components/angular-animate/angular-animate.min.js")
+    script(src="/bower_components/angular-cookies/angular-cookies.min.js")
     script(src="/bower_components/angular-resource/angular-resource.min.js")
+    script(src="/bower_components/textAngular/textAngular.min.js")
 
     //- AngularJS App
     script(src="/js/routingConfig.js")
