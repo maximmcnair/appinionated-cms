@@ -20,4 +20,13 @@
           strong Text Color:
           input(type="text", ng-model="review.colorText")
     .review__details__row
+      .review__images
+        .review__images__col
+          div(ng-show="dropSupported", class="drop-box", ng-file-drop="onFileSelect($files);", ng-file-drop-available="dropSupported=true").review__images__drop
+            | Upload image
+          //- input(type="file", ng-file-select="onFileSelect($files)").input-box
+
+        .review__images__col(ng-repeat="image in review.images track by $index")
+          img(src="{{image}}")
+    .review__details__row
       a(ng-click="updateReview(review)").review__details__update Update

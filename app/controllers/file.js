@@ -1,29 +1,30 @@
-var mongoose = require('mongoose')
-  , fs = require('fs')
-  , FileModel = require('../models/file.js').FileModel
-  
 module.exports = function (app, options) {
   var logger = options.logger
+    , fs = require('fs')
+    , connection = options.connection
+    , FileModel = connection.model('File')
+    , url = '/api/file/upload'
 
   logger.info('Setting up file routes')
 
-  app.post('/api/file/upload', function (req, res){
-    var oldPath = req.files.myFile.path
-    //   , pathPieces = oldPath.split("/")
-    //   , filename = pathPieces[pathPieces.length - 1]
-    //   , newPath = __dirname + "/../../../client/images/uploads/" + filename
+  app.post(url, function (req, res){
+    var oldPath = req.files.file.ws.path
+      , userId = req.user._id
+      , filename = userId + '_' + req.files.file.originalFilename
+      , newPath = __dirname + '/../../public/uploads/' + filename
 
-    var userId = req.user._id
-      , filename = userId + '_' + req.files.myFile.name
-      , newPath = __dirname + '/../public/uploads/' + filename
+
+    logger.info('newPath', newPath)
 
     fs.rename(oldPath, newPath, function (err) {
+      logger.error(err)
+      logger.info('susa')
       if (err === null) {
         var file = {
-          modificationDate: req.files.myFile.modifiedDate || new Date()
-        , name: req.files.myFile.name || "???"
-        , size: req.files.myFile.size || 0
-        , type: req.files.myFile.type || "???"
+          modificationDate: req.files.file.modifiedDate || new Date()
+        , name: req.files.file.name || "???"
+        , size: req.files.file.size || 0
+        , type: req.files.file.type || "???"
         , filename: filename
         , userId: req.user._id
         }
@@ -40,7 +41,10 @@ module.exports = function (app, options) {
           , err: err
           , path: '/uploads/' + filename
           }
-          return res.send(retObj)
+          if(!err){
+            console.log('file upload success', retObj)
+            return res.send(retObj)
+          }
         })
       }
     })

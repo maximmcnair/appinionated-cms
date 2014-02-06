@@ -34,16 +34,17 @@ module.exports = function (app, options) {
   // Update Project
   app.put(url, function (req, res) {
     ReviewModel.findById(req.body._id, function (err, review) {
-      console.log('review', review)
-      if(err) res.json(err)
-      var key
-      for (key in req.body) {
-        review[key] = req.body[key]
+      if(err) return res.json(err, 404)
+      if(review){
+        var key
+        for (key in req.body) {
+          review[key] = req.body[key]
+        }
+        review.save(function (err) {
+          if(err) res.json(err, 404)
+          res.json(review, 201)
+        })
       }
-      review.save(function (err) {
-        if(err) res.json(err, 404)
-        res.json(review, 201)
-      })
     })
   })
 

@@ -35,11 +35,10 @@
   display block
 
 .review--open
-  height (94 + 455)px
+  height (94 + 700)px
 
 .review__details
-  // padding 20px 0px
-  height 455px
+  height 700px
 
 .review__title__input
   font-size 45px
@@ -69,6 +68,25 @@
   float right
   margin 0
 
+.review__images
+  margin-bottom 15px
+
+.review__images__drop
+  border 2px dashed #ffffff
+  width 150px
+  padding 122px 0px
+  display block
+  text-align center
+  background-color #1B2734
+  transition transform .3s
+  &.dragover
+    border-color #A5D79E
+    transform scale(1.1, 1.1)
+
+.review__images__col
+  float left
+  margin-right 15px
+  width 150px
 
 .review__details__review
   width 100%
