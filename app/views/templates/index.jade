@@ -1,7 +1,8 @@
 header.header-main
   .wrapper
     h1.header__title Appinionated
-    strong(ng-click="triggerAddReviewWidget").header__review-add Add Review
+    strong(ng-click="triggerAddReviewWidget()", ng-if="!showAddReviewWidget").header__review-add Add Review
+    strong(ng-click="triggerAddReviewWidget()", ng-if="showAddReviewWidget").header__review-add Close
 
 section(ng-if="showAddReviewWidget")
   .wrapper

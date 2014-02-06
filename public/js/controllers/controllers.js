@@ -16,6 +16,9 @@ function HomeCtrl($scope, ReviewFactory) {
       console.log('success', res)
     })
   }
+  $scope.triggerAddReviewWidget = function () {
+    $scope.showAddReviewWidget = !$scope.showAddReviewWidget
+  }
 
   //========================================================
   //  Open Review
