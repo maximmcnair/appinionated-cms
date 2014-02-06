@@ -1,73 +1,207 @@
-!!! 5
-
-html(ng-app="myApp")
-
+doctype 5
+html
   head
-    title Synth MEAN
-    link(rel="stylesheet", href='/css/main.css')
-    link(rel='stylesheet prefetch', href='http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css')
+    title Appinionated
 
+    // Twitter Meta
+    //- meta(name='twitter:card', value='summary')
+    //- meta(name='twitter:site', value='')
+
+    // Facebook Meta
+    <meta property="og:url" content="http://www.appinionated.co.uk/"/>
+    <meta property="og:title" content="Appinionated"/>
+    <meta property="og:description" content="Bringing you short and concise reviews on only the best designed apps and games for the iPhone and iPad."/>
+    <meta property="og:image" content="/imgs/apple/apple-touch-icon-precomposed-144x144.png">
+
+    // Google Meta
+    meta(name="author",content="http://www.appinionated.co.uk")
+    meta(name="description", content="Bringing you short and concise reviews on only the best designed apps and games for the iPhone and iPad.")
+
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0')
+
+    // TradeDoubler site verification 2334711
+
+    // iPhone
+    link(rel='apple-touch-icon-precomposed', href=('/imgs/apple/apple-touch-icon-precomposed-57x57.png'), sizes='57x57')
+    // iPhone (Retina)
+    link(rel='apple-touch-icon-precomposed', href=('/imgs/apple/apple-touch-icon-precomposed-114x114.png'), sizes='114x114')
+    // iPad
+    link(rel='apple-touch-icon-precomposed', href=('/imgs/apple/apple-touch-icon-precomposed-72x72.png'), sizes='72x72')
+    // iPad (Retina)
+    link(rel='apple-touch-icon-precomposed', href=('/imgs/apple/apple-touch-icon-precomposed-144x144.png'), sizes='144x144')
+
+    block fonts
+
+    link(rel='shortcut icon',type='image/png',href='/img/favicon.png')
+    link(rel='stylesheet', href='/css/vendor/reset.css')
+    link(rel='stylesheet', href='/css/vendor/flexslider.css')
+    link(rel='stylesheet', href='/css/vendor/font-awesome.min.css')
+    link(rel='stylesheet', href='/css/main.css')
+
+    block stylesheets
+
+    script(type="text/javascript", src="//use.typekit.net/jja4ieg.js")
     script.
-      (function() {
-        var config = {
-          kitId: 'jja4ieg'
-        };
-        var d = false;
-        var tk = document.createElement('script');
-        tk.src = '//use.typekit.net/' + config.kitId + '.js';
-        tk.type = 'text/javascript';
-        tk.async = 'true';
-        tk.onload = tk.onreadystatechange = function() {
-          var rs = this.readyState;
-          if (d || rs && rs != 'complete' && rs != 'loaded') return;
-          d = true;
-          try { Typekit.load(config); } catch (e) {}
-        };
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(tk, s);
-      })();
+      try{Typekit.load();}catch(e){}
+
+    script(src="/js/vendor/modernizr.custom.45427.js")
 
   body
-    include includes/header
+    .container.home
+    //- header.header
+    //-   .wrapper
+    //-     a(href="/") Home
+    //-     a(href="/#tags") Tags
+    //-     a(href="/#submit") Submit
 
-    block content
+    section.landing
+      .wrapper
+        h1.landing-header Appinionated
+        p.landing-desc
+          | We feature only the best designed apps &amp; games for the iPhone and iPad.
 
-    //- Libs
-    script(src="/js/libs/jquery-1.8.2.min.js")
-    script(src='/js/libs/underscore.js')
+        .follow-btn
+          a(href="https://twitter.com/appinionated_", data-show-count="false", data-lang="en").twitter-follow-button Follow @appinionated_
 
-    //- AngularJS
-    //- script(src="/js/libs/angularjs/angular.min.js")
-    //- script(src="/js/libs/angularjs/angular-cookies.min.js")
-    //- script(src="/js/libs/angularjs/angular-route.min.js")
-    //- script(src="/js/libs/angularjs/angular-sanitize.min.js")
-    //- script(src="/js/libs/angularjs/angular-animate.min.js")
-    //- script(src="/js/libs/angularjs/angular-cookies.min.js")
-    //- script(src="/bower_components/angular/angular.min.js")
-    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js")
-    script(src="/bower_components/angular-sanitize/angular-sanitize.min.js")
-    script(src="/bower_components/angular-route/angular-route.min.js")
-    script(src="/bower_components/angular-animate/angular-animate.min.js")
-    script(src="/bower_components/angular-cookies/angular-cookies.min.js")
-    script(src="/bower_components/angular-resource/angular-resource.min.js")
-    script(src="/bower_components/textAngular/textAngular.min.js")
+        .social-links
+          .fb-like(data-href="http://www.appinionated.co.uk/", data-colorscheme="light", data-layout="button_count", data-action="like", data-show-faces="false", data-send="false")
+          a(href="https://twitter.com/share", data-url="http://www.appinionated.co.uk/", data-via="appinionated_").twitter-share-button Tweet
 
-    //- AngularJS App
-    script(src="/js/routingConfig.js")
-    script(src="/js/app.js")
+        p
+          a(href="mailto:submit@appinionated.co.uk?subject=Here's%20my%20app&body=Remember to send us a redeem code if it's a priced app.").mail-to
+            |Send us your app
 
-    //- AngularJS Controllers
-    script(src="/js/controllers/controllers.js")
-    script(src="/js/controllers/auth-controller.js")
-    script(src="/js/controllers/admin-controller.js")
-    script(src="/js/controllers/nav-controller.js")
+      .keyboard-nav
+        .up
+          i.icon-arrow-up
+        .left
+        .down
+          i.icon-arrow-down
+        .right
 
-    //- AngularJS Filters
-    script(src="/js/filters.js")
+      a(href="/#tall-chess").phone--top
+      a(href="/#thinglist").phone--bottom
+      .arrow-down.js-review-first
 
-    //- AngularJS Services
-    script(src="/js/services.js")
-    script(src="/js/services/review.js")
+    section(data-hex="1cb0f6", id="duolingo").review.review--portrait.review--text--light.review--phone--dark
+      .wrapper
+        .review__images
+          .review__image__wrapper
+            ul.slides
+              li
+                img(src="/imgs/duolingo/duolingo-1.jpg")
+              li
+                img(src="/imgs/duolingo/duolingo-2.jpg")
+              li
+                img(src="/imgs/duolingo/duolingo-3.jpg")
+              li
+                img(src="/imgs/duolingo/duolingo-4.jpg")
+        .review__desc
+          h2 Duolingo
+          p
+            | Offering free courses in Spanish, English, French, German, Portuguese, 
+            | Italian. Duolingo creates a gamified experience for learning a new 
+            | language, incorporating speaking, writing and listening for a well 
+            | rounded learning experience.
+          a(href="https://itunes.apple.com/gb/app/duolingo-learn-languages-for/id570060128?mt=8", target="_blank", onclick="_gaq.push(['_trackEvent','app_link','Duolingo'])").btn View App
 
-    //- AngularJS Directives
-    script(src="/js/directives/directives.js")
+
+
+    section(data-hex="86ad46", id="tall-chess").review.review--portrait.review--text--light.review--phone--light
+      .wrapper
+        .review__images
+          .review__image__wrapper
+            ul.slides
+              li
+                img(src="/imgs/tall-chess/tall-chess-1.png")
+              //- li
+              //-   img(src="/imgs/tall-chess/tall-chess-2.png")
+        .review__desc
+          h2 Tall Chess
+          p
+            | A beautiful and simple multiplayer chess game, Balitmore&#8217;s 
+            a(href="http://friendsoftheweb.com/") Friends of the Web, 
+            | have hand crafted each individual Chess piece and matched them with 
+            | superb animations that will keep you playing for hours.
+          a(href="https://itunes.apple.com/gb/app/tall-chess/id635361464?mt=8", target="_blank", onclick="_gaq.push(['_trackEvent','app_link','Tall Chess'])").btn View app
+
+    section(data-hex="fcfc02", id="rechner").review.review--portrait.review--text--dark.review--phone--dark
+      .wrapper
+        .review__images
+          .review__image__wrapper
+            ul.slides
+              li
+                img(src="/imgs/rechner/rechner-1.jpg")
+              li
+                img(src="/imgs/rechner/rechner-2.jpg")
+              li
+                img(src="/imgs/rechner/rechner-3.jpg")
+        .review__desc
+          h2 Rechner
+          p
+            | Touted as "the world's first gesture based calculator" Rechner uses 
+            | swipe gestures to trigger mathematical operations. Swipe left for 
+            | addition, right for subtraction.
+          p
+            | Designed by 
+            a(href="http://bergerfohr.com/") Berger & F&ouml;hr, 
+            | the only changed I'd like to see them add would be the option to add 
+            | your own custom color.
+          a(href="https://itunes.apple.com/us/app/rechner-calculator/id508837827?mt=8", target="_blank", onclick="_gaq.push(['_trackEvent','app_link','Rechner'])").btn View app
+
+    section(data-hex="e83e40", id="film-alphabets").review.review--portrait.review--text--light.review--phone--dark
+      .wrapper
+        .review__images
+          .review__image__wrapper
+            ul.slides
+              li
+                img(src="/imgs/film-alphabets/film-alphabets-1.png")
+              li
+                img(src="/imgs/film-alphabets/film-alphabets-2.png")
+              li
+                img(src="/imgs/film-alphabets/film-alphabets-3.png")
+        .review__desc
+          h2 Film Alphabets
+          p
+            | Built by 
+            a(href="http://www.wildishandco.co.uk/") Wildish 
+            | &amp; 
+            a(href="http://www.synthmedia.co.uk/") Synth Media, 
+            | Film Alphabets quizzes your movie knowledge of different decades and 
+            | genres with custom illustrations of an A to Z selection of that area. 
+          p
+            | Using an hangman style guessing mechanic, Film Alphabets offers fun 
+            | gameplay for all age ranges.
+          a(href="https://itunes.apple.com/gb/app/film-alphabets/id661150816?mt=8", target="_blank", onclick="_gaq.push(['_trackEvent','app_link','Film Alphabets'])").btn View app
+
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script.
+      window.jQuery || document.write('<script src="/js/vendor/jquery-2.0.3.js"><\/script>')
+    script(src='/js/vendor/jquery.flexslider-min.js')
+    script(src='/js/app.js')
+
+    // Google Analytics
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga')
+
+      ga('create', 'UA-42809533-1', 'appinionated.co.uk')
+      ga('send', 'pageview')
+
+
+    div#fb-root
+    script.
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=733620159987309";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+    script.
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs")
+
+    block javascript

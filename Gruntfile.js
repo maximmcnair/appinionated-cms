@@ -8,19 +8,25 @@ module.exports = function(grunt) {
           { compress: false
           , data: { debug: true }
           }
-        , files: { 'public/css/main.css': 'public/stylus/main.styl' }
+        , files:
+          { 'public/css/cms.css': 'stylus/cms/main.styl'
+          , 'public/css/main.css': 'stylus/app/main.styl'
+          }
         }
       , compressed:
         { options:
           { compress: true
           , data: { debug: false }
           }
-        , files: { 'public/css/main.css': 'public/stylus/main.styl' }
+        , files:
+          { 'public/css/cms.css': 'stylus/cms/main.styl'
+          , 'public/css/main.css': 'stylus/app/main.styl'
+          }
         }
       }
     , watch:
       { stylus:
-        { files: ['public/stylus/**/**.styl']
+        { files: ['public/stylus/**/**/**.styl']
         , tasks: 'stylus'
         , options: { livereload: true }
         }

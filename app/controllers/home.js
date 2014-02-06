@@ -10,7 +10,7 @@ module.exports = function (app, options) {
 
 
 
-  app.get('/*', function (req, res) {
+  app.get('/cms/', function (req, res) {
     if(req.user) {
       role = req.user.role;
       username = req.user.username;
@@ -22,6 +22,21 @@ module.exports = function (app, options) {
         '_id': _id
       }))
     }
+    res.render('cms')
+  })
+
+  app.get('/*', function (req, res) {
+    // if(req.user) {
+    //   role = req.user.role;
+    //   username = req.user.username;
+    //   _id = req.user._id;
+      
+    //   res.cookie('user', JSON.stringify({
+    //     'username': username,
+    //     'role': role,
+    //     '_id': _id
+    //   }))
+    // }
     res.render('home')
   })
 

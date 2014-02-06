@@ -1,0 +1,158 @@
+.review
+  display block
+  overflow hidden
+  padding 50px 0px
+  p
+    font-size 17px
+    line-height 25px
+
+.review--text--dark
+  color #454545
+  a
+    color #454545
+    font-style italic
+
+.review--text--light
+  color #ffffff
+  a
+    color #ffffff
+    font-style italic
+  a.btn
+  .btn
+    background-color rgba(350, 350, 350, 0.6)
+    &:hover
+      background-color rgba(350, 350, 350, 0.8)
+
+.flex-control-nav
+.flex-direction-nav
+  display none
+
+.slides
+  overflow hidden
+
+
+// .review--landscape
+//   .review__image__wrapper
+//     background url('/imgs/phone-landscape-white.png')
+//     width 460px
+//     height 230px
+//   &.review--phone--dark
+//     .review__image__wrapper
+//       background url('/imgs/phone-landscape-black.png')
+//   .slides
+//     width 391px
+//     height 205px
+//     padding-left 68px
+//     padding-top 24px
+
+
+@media screen and (max-width: 700px)
+  .review__image__wrapper
+    display block
+    margin 0 auto 25px auto
+    width 182px
+
+@media screen and (min-width: 700px)
+  // @media screen and (min-width: 1037px)
+  .review__images
+    width responsive(460, 940)
+    margin 0 responsive(20, 940) 0 0
+    float left
+
+  .review__desc
+    width responsive(460, 940)
+    float right
+    margin 0
+    p
+      max-width 500px
+
+  .review:nth-of-type(2n)
+    .review__images
+      float right
+      margin 0
+    .review__desc
+      float left
+      margin 0 responsive(20, 940) 0 0
+
+  .review--landscape
+    padding 300px 0px
+
+  .review--portrait
+    h2
+      margin-top 90px
+
+
+.review--portrait
+  .review__image__wrapper
+    background-image url('/imgs/phone-portrait-white.png')
+    background-size contain
+    width 230px
+    height 500px
+    margin 0 auto
+  &.review--phone--dark
+    .review__image__wrapper
+      background-image url('/imgs/phone-portrait-black.png')
+  .slides
+    width 205px
+    height 394px
+    padding-top 70px
+    padding-left 23px
+    img
+      width 100% !important
+
+
+// @media (-webkit-min-device-pixel-ratio: 2),
+// @media (min-resolution: 192dpi)
+//   .review--portrait
+//     .review__image__wrapper
+//       background-image url('/imgs/phone-portrait-white@2x.png')
+//     &.review--phone--dark
+//       .review__image__wrapper
+//         background-image url('/imgs/phone-portrait-black@2x.png')
+
+
+
+@media (min-width: 1020px) and (min-height: 770px)
+  .review--portrait
+    .review__image__wrapper
+      background-image url('/imgs/phone-portrait-white-lrg.png')
+      width 310px
+      height 680px
+    &.review--phone--dark
+      .review__image__wrapper
+        background-image url('/imgs/phone-portrait-black-lrg.png')
+    .slides
+      width 276px
+      height 527px
+      padding-top 96px
+      padding-left 33px
+
+
+@media (min-width: 1020px) and (min-height: 770px) and (-webkit-min-device-pixel-ratio: 2),
+@media (min-width: 1020px) and (min-height: 770px) and (min-resolution: 192dpi)
+  .review--portrait
+    .review__image__wrapper
+      background-image url('/imgs/phone-portrait-white-lrg@2x.png')
+    &.review--phone--dark
+      .review__image__wrapper
+        background-image url('/imgs/phone-portrait-black-lrg@2x.png')
+
+@media screen and (min-height: 600px)
+  .review--portrait
+    padding 50px 0px
+
+@media screen and (min-height: 700px)
+  .review--portrait
+    padding 100px 0px
+
+// @media screen and (min-height: 800px)
+//   .review--portrait
+//     padding 170px 0px
+
+// @media screen and (min-height: 900px)
+//   .review--portrait
+//     padding 200px 0px
+
+// @media screen and (min-height: 1000px)
+//   .review--portrait
+//     padding 230px 0px

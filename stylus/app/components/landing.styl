@@ -1,0 +1,162 @@
+.social-links
+  position fixed
+  top 15px
+  right 15px
+  z-index 999999
+  display none
+
+@media (min-width: 700px)
+  .social-links
+    display block
+
+.landing
+  background #7c6299
+  overflow hidden
+  position relative
+  text-align center
+  // Stop flash of heights being added
+  height 1000px
+
+.landing-header
+  color #483d4e
+  padding-top 170px
+  margin-bottom 10px
+  @media (min-width:700px) and (min-height: 768px)
+    margin-bottom 15px
+    padding-top 200px
+  @media (min-width:700px) and (min-height: 900px)
+    margin-bottom 15px
+    padding-top 260px
+.landing-desc
+  color #ffffff
+  max-width 400px
+  margin 0 auto
+
+.mail-to
+  color #483d4e
+  cursor pointer
+  &:hover
+    color darken(#483d4e, 10%)
+
+//========================================================
+//  landing images
+//========================================================
+.phone
+  display block
+  opacity 0
+  transition opacity 1s
+
+
+@media (min-width: 1000px) and (min-height: 568px)
+  .phone--bottom
+    width 352px
+    height 350px
+    position absolute
+    opacity 1
+    bottom -80px
+    right 80px
+    background-image url('/imgs/landing-phone-bottom.png')
+    background-position top right
+    animation phoneBottomIntro .4s linear
+  .phone--top
+    width 352px
+    height 314px
+    position absolute
+    opacity 1
+    top -50px
+    left 40px
+    height 314px
+    background-image url('/imgs/landing-phone-top.png')
+    background-position bottom left
+    animation phoneTopIntro .4s linear
+
+@media (min-width: 1110px) and (min-height: 768px)
+  .phone--bottom
+    bottom 0px
+  .phone--top
+    top 0px
+
+
+@keyframes phoneTopIntro
+  0%
+    transform translate3d(0px, -150px, 0px)
+    opacity 0
+  100%
+    transform translate3d(0px, 0px, 0px)
+    opacity 1
+
+@keyframes phoneBottomIntro
+  0%
+    transform translate3d(0px, 150px, 0px)
+    opacity 0
+  100%
+    transform translate3d(0px, 0px, 0px)
+    opacity 1
+
+//========================================================
+//  Arrow Down
+//========================================================
+// @media $mediaDesktop
+.arrow-down
+  display block
+  width 42px
+  height 17px
+  background url('/imgs/arrow.png')
+  position absolute
+  margin-left -21px
+  bottom 55px
+  left 50%
+  animation arrowMovement 10s linear infinite
+
+@keyframes arrowMovement
+  0%
+    transform translate(0px, 0px)
+  50%
+    transform translate(0px, 8px)
+  100%
+    transform translate(0px, 0px)
+
+
+
+
+
+//========================================================
+//  Keyboard icon
+//========================================================
+.keyboard-nav
+  display none
+
+@media $mediaDesktop
+  //Show keyboard nav icon if there isn't touc
+  .no-touch
+    .keyboard-nav
+      display block
+      position absolute
+      bottom 50px
+      left 50px
+      div
+        width 30px
+        height 30px
+        display block
+        border 2px solid #ffffff
+        border-radius 3px
+        margin 3px
+        i
+          margin-top 7px
+          color #ffffff
+          display block
+          font-size 13px
+      .left
+      .right
+      .down
+        float left
+      .up
+        margin-left 39px
+        // animation keyboard-down .3s linear infinite
+      .down
+      .up
+        opacity 0.8
+      .left
+      .right
+        opacity 0.4
+

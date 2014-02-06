@@ -162,7 +162,7 @@ module.exports = function (logger, connection) {
 
   UserModel = connection.model('User')
 
-  UserModel.findOne({ title: 'Film Alphabets'}, function (err, doc){
+  UserModel.findOne({ username: 'leonardofox'}, function (err, doc){
    if(doc === null){
       var newUser = new UserModel({
         name: 'Leonardo'
