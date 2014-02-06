@@ -42,6 +42,7 @@ connection.once('open', function connectionOpen() {
   require(__dirname + '/app/controllers/auth')(app, options, passport)
   require(__dirname + '/app/controllers/review')(app, options)
   require(__dirname + '/app/controllers/user')(app, options)
+  require(__dirname + '/app/controllers/file')(app, options)
   require(__dirname + '/app/controllers/home')(app, options)
 
   // Start the app by listening on <port>

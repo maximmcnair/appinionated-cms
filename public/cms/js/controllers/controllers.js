@@ -60,4 +60,5 @@ function HomeCtrl($scope, ReviewFactory) {
   $scope.isSelected = function (item) {
     return $scope.selected == item
   }
+
 }
