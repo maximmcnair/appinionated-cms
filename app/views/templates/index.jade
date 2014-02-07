@@ -59,7 +59,7 @@ div(infinite-scroll="addReviews()", class="scroll-loader", can-load="canLoad", t
         .review__desc
           h2(ng-bind="review.title")
           div(ng-bind-html="review.review")
-          a(href="https://itunes.apple.com/gb/app/duolingo-learn-languages-for/id570060128?mt=8", target="_blank", onclick="_gaq.push(['_trackEvent','app_link','Duolingo'])").btn View App
+          a(href="{{review.hrefStore}}", target="_blank").btn View App
 
   //- section(ng-repeat="review in reviews").review.review--portrait.review--phone--dark
   //-   .review__preview
