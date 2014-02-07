@@ -42,6 +42,7 @@ angular.module('myApp')
         scope.updateReview = function (data) {
           var newReview = new ReviewFactory(data)
           newReview.$update({}, function (res) {
+            scope.modelChanged = false
             console.log('success', res)
           })
         }
