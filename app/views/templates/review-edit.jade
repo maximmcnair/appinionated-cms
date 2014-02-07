@@ -1,7 +1,7 @@
 .review__preview(style="background-color: #{{review.colorBg}}; color: #{{review.colorText}};")
   .wrapper
     h2(ng-bind="review.title").review__title
-    save(ng-click="updateReview(review)").review__details__update Save Changes
+    save(ng-click="updateReview(review)", ng-if="modelChanged").review__details__update Save Changes
 .wrapper
   form.review__details
     .review__details__row

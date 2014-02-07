@@ -31,6 +31,15 @@ angular.module('myApp')
         //========================================================
         //  Update review
         //========================================================
+        var changeCount = 0
+        scope.modelChanged = false
+        scope.$watch('review', function() {
+          if(changeCount > 0){
+            scope.modelChanged = true
+          }
+          changeCount ++
+        }, true)
+
         scope.updateReview = function (data) {
           var newReview = new ReviewFactory(data)
           newReview.$update({}, function (res) {
