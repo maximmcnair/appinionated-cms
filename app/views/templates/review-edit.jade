@@ -1,6 +1,7 @@
 .review__preview(style="background-color: #{{review.colorBg}}; color: #{{review.colorText}};")
   .wrapper
     h2(ng-bind="review.title").review__title
+    save(ng-click="updateReview(review)").review__details__update Save Changes
 .wrapper
   form.review__details
     .review__details__row
@@ -28,5 +29,5 @@
 
         .review__images__col(ng-repeat="image in review.images track by $index")
           img(src="{{image}}")
-    .review__details__row
-      a(ng-click="updateReview(review)").review__details__update Update
+    //- .review__details__row
+    //-   a(ng-click="updateReview(review)").review__details__update Update
