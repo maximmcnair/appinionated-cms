@@ -10,17 +10,16 @@ angular.module('myApp')
         //========================================================
         var saveBtn = element.find('save')
           , defaultStyles = {
-              borderColor: '#' + scope.review.colorText
-            , background: 'transparent'
-            , color: '#' + scope.review.colorText
-            }
+                borderColor: '#' + scope.review.colorText
+              , background: 'transparent'
+              , color: '#' + scope.review.colorText
+              }
           , hoverStyles = {
-              background: '#' + scope.review.colorText
-            , color: '#' + scope.review.colorBg
-            }
+                background: '#' + scope.review.colorText
+              , color: '#' + scope.review.colorBg
+              }
 
         saveBtn.css(defaultStyles)
-
         saveBtn.on('mouseenter', function() {
           saveBtn.css(hoverStyles)
         })
