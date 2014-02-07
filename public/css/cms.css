@@ -21,8 +21,9 @@ body{color:#fff;background-color:#233445;margin:0}
 .wrapper{max-width:940px;margin:0 auto;zoom:1}
 .wrapper:before,.wrapper:after{content:"";display:table}
 .wrapper:after{clear:both}
-a.btn,.btn,.btn-lrg,.review__details__save,.review__details__update{padding:7px 20px;-webkit-border-radius:4px;border-radius:4px;display:inline-block;background-color:#233445;color:#fff;font-size:14px;font-weight:800;border:1px solid #fff;-webkit-transition:all .3s;-moz-transition:all .3s;-o-transition:all .3s;-ms-transition:all .3s;transition:all .3s;cursor:pointer;margin-right:10px;}
-a.btn:hover,.btn:hover,.btn-lrg:hover,.review__details__save:hover,.review__details__update:hover{background-color:#fff;color:#233445}
+a.btn,.btn,button,.btn-lrg,.review__details__save,.review__details__update{font-family:"proxima-nova-soft",sans-serif;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;padding:7px 20px;-webkit-border-radius:4px;border-radius:4px;display:inline-block;background-color:#233445;color:#fff;font-size:14px;font-weight:800;border:1px solid #fff;-webkit-transition:all .3s;-moz-transition:all .3s;-o-transition:all .3s;-ms-transition:all .3s;transition:all .3s;cursor:pointer;margin-right:10px;}
+a.btn:hover,.btn:hover,button:hover,.btn-lrg:hover,.review__details__save:hover,.review__details__update:hover{background-color:#fff;color:#233445}
+a.btn:focus,.btn:focus,button:focus,.btn-lrg:focus,.review__details__save:focus,.review__details__update:focus{outline:0;-webkit-box-shadow:0;box-shadow:0}
 .btn-lrg,.review__details__save,.review__details__update{padding:15px 30px;font-size:14px;margin-right:0}
 .input-clear,textarea,input,.review__title__input{outline:0;border:0;background:transparent}
 .list-no-style{list-style-type:none;margin:0;padding:0}
@@ -70,22 +71,23 @@ input[type=checkbox]:checked:before{content:'\f00c';left:9px}
 .review__details__review{width:100%;max-width:100%;min-height:250px;max-height:250px}
 .ta-editor{width:100%;max-width:100%;min-height:250px;max-height:250px;margin-top:15px;}
 .ta-editor p{margin-top:0}
-.login-form,.signup-form{max-width:400px;width:80%;margin:200px auto 0 auto;display:block;}
-.login-form input,.signup-form input{background:#151f2e;color:#fff}
-.login-form .btn,.signup-form .btn{width:100%;margin-top:20px}
-.input-top{-webkit-border-radius:3px 3px 0 0;border-radius:3px 3px 0 0}
-.input-btm{-webkit-border-radius:0 0 3px 3px;border-radius:0 0 3px 3px}
-.form__small{color:#fff;font-size:15px;text-align:center;margin-top:10px;display:block}
-.form-label{position:relative;width:100%;display:block;}
-.form-label i{position:absolute;top:18px;left:20px;color:$colourBG;font-size:24px;-webkit-transition:all .3s;-moz-transition:all .3s;-o-transition:all .3s;-ms-transition:all .3s;transition:all .3s}
+.title--centered{text-align:center;font-size:22px}
+.login-form{max-width:400px;width:80%;margin:200px auto 0 auto;display:block;}
+.login-form .btn{margin:15px 0 0 0;background:#7bb7fa;padding:20px;font-size:19px;display:inline-block;-webkit-border-radius:3px;border-radius:3px;color:#fff;border:0;cursor:pointer;display:block;width:100%;}
+.login-form .btn:hover{background:#57a3f9}
+.form-label{margin:0;position:relative;width:100%;display:block;}
+.form-label i{position:absolute;top:18px;left:20px;color:#59646f;font-size:24px;-webkit-transition:all .3s;-moz-transition:all .3s;-o-transition:all .3s;-ms-transition:all .3s;transition:all .3s}
 .form-label .fa-user{top:21px;left:22px}
 .form-label .fa-key{top:22px}
 .form-label input:focus + i{color:#fff}
-.form-label input{padding-left:65px}
-.form-label input::-webkit-input-placeholder{color:#fff}
-.form-label input:-moz-placeholder{color:#fff}
-.form-label input::-moz-placeholder{color:#fff}
-.form-label input:-ms-input-placeholder{color:#fff}
+.form-label input{padding-left:65px;font-weight:400;font-size:18px}
+.form-label input::-webkit-input-placeholder{color:#59646f;font-weight:800;font-size:18px}
+.form-label input:-moz-placeholder{color:#59646f;font-weight:800;font-size:18px}
+.form-label input::-moz-placeholder{color:#59646f;font-weight:800;font-size:18px}
+.form-label input:-ms-input-placeholder{color:#59646f;font-weight:800;font-size:18px}
+.input-top,.input-btm{padding:20px;margin:0}
+.input-top{-webkit-border-radius:3px 3px 0 0;border-radius:3px 3px 0 0}
+.input-btm{-webkit-border-radius:0 0 3px 3px;border-radius:0 0 3px 3px}
 .pull-left{float:left}
 .pull-right{float:right}
 .clear{clear:both}

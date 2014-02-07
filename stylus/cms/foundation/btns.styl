@@ -9,6 +9,9 @@
 //==============================================================================
 a.btn,
 .btn
+button
+  font-family $primaryTypeface
+  user-select(none)
   padding 7px 20px
   border-radius 4px
   display inline-block
@@ -23,6 +26,9 @@ a.btn,
   &:hover
     background-color #ffffff
     color #233445
+  &:focus
+    outline 0
+    box-shadow 0
 
 .btn-lrg
   @extends .btn

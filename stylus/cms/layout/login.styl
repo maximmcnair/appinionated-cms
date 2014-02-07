@@ -1,39 +1,37 @@
+.title--centered
+  text-align center
+  font-size 22px
+
 .login-form
-.signup-form
   max-width 400px
   width 80%
   margin 200px auto 0px auto
   display block
-  input
-    background #151F2E
-    color #ffffff
   .btn
+    margin: 15px 0 0 0;
+    background: #7BB7FA;
+    padding: 20px;
+    font-size: 19px;
+    display: inline-block;
+    border-radius: 3px;
+    color: #FFF;
+    border: 0;
+    cursor: pointer;
+    display block
     width 100%
-    margin-top 20px
-
-.input-top
-  border-radius 3px 3px 0px 0px
-
-.input-btm
-  border-radius 0px 0px 3px 3px
-
-.form__small
-  color #ffffff
-  font-size 15px
-  text-align center
-  margin-top 10px
-  display block
+    &:hover
+      background: darken(#7BB7FA, 10%)
 
 .form-label
+  margin 0
   position relative
   width 100%
   display block
-
   i
     position absolute
     top 18px
     left 20px
-    color $colourBG
+    color #59646F
     font-size 24px
     transition all .3s
   .fa-user
@@ -41,38 +39,34 @@
     left 22px
   .fa-key
     top 22px
-
   input:focus + i
     color #ffffff
-
   input
     padding-left 65px
-
+    font-weight 400
+    font-size 18px
   input::-webkit-input-placeholder
-    color #ffffff
-    // transition all .3s
-
+    color #59646F
+    font-weight 800
+    font-size 18px
   input:-moz-placeholder
-    color #ffffff
-    // transition all .3s
-
+    color #59646F
+    font-weight 800
+    font-size 18px
   input::-moz-placeholder
-    color #ffffff
-    // transition all .3s
-
+    color #59646F
+    font-weight 800
+    font-size 18px
   input:-ms-input-placeholder
-    color #ffffff
-  //   transition all .3s
+    color #59646F
+    font-weight 800
+    font-size 18px
 
-
-  // input:focus::-webkit-input-placeholder
-  //   color #ffffff
-
-  // input:focus:-moz-placeholder
-  //   color #ffffff
-
-  // input:focus::-moz-placeholder
-  //   color #ffffff
-
-  // input:focus:-ms-input-placeholder
-  //   color #ffffff
+.input-top
+.input-btm
+  padding 20px
+  margin 0
+.input-top
+  border-radius 3px 3px 0px 0px
+.input-btm
+  border-radius 0px 0px 3px 3px
