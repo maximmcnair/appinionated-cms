@@ -8,7 +8,8 @@ module.exports = function (app, options) {
 
   // GET Projects
   app.get(url, function (req, res) {
-    ReviewModel.find({}, function (err, reviews) {
+    console.log(req.query)
+    ReviewModel.find({}, '', {skip: req.query.offset, limit: req.query.limit }, function (err, reviews) {
       if(err) return res.json(err, 400)
       return res.json(reviews, 201)
     })

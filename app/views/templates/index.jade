@@ -11,7 +11,7 @@
 //-         div(ng-bind-html="review.review")
 //-         a(href="https://itunes.apple.com/gb/app/duolingo-learn-languages-for/id570060128?mt=8", target="_blank", onclick="_gaq.push(['_trackEvent','app_link','Duolingo'])").btn View App
 
-div(infinite-scroll="addReviews()", class="scroll-loader", can-load="canLoad", threshold="100", style="height: {{pageHeight}}")
+div(infinite-scroll="addReviews()", class="scroll-loader", can-load="canLoad", threshold="80", style="height: {{pageHeight}}")
   .container.home
     header.header
       .wrapper
@@ -48,7 +48,7 @@ div(infinite-scroll="addReviews()", class="scroll-loader", can-load="canLoad", t
       a(href="/#thinglist").phone--bottom
       //- .arrow-down.js-review-first
 
-  section(ng-repeat="review in reviews", style="background-color: #{{review.colorBg}}; color: #{{review.colorText}};", ng-if="review.published").review.review--portrait.review--phone--dark
+  section(ng-repeat="review in reviews", style="background-color: #{{review.colorBg}}; color: #{{review.colorText}}; height: {{pageHeight}}", ng-if="review.published").review.review--portrait.review--phone--dark
     .review__preview
       .wrapper
         .review__images
