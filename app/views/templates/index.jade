@@ -1,49 +1,70 @@
-.container.home
-//- header.header
-//-   .wrapper
-//-     a(href="/") Home
-//-     a(href="/#tags") Tags
-//-     a(href="/#submit") Submit
+//- section(ng-repeat="review in reviews", style="background-color: #{{review.colorBg}}; color: #{{review.colorText}};", ng-if="review.published").review.review--portrait.review--phone--dark
+//-   .review__preview
+//-     .wrapper
+//-       .review__images
+//-         .review__image__wrapper
+//-           ul.slides
+//-             li(ng-repeat="image in review.images track by $index")
+//-               img(src="{{image}}")
+//-       .review__desc
+//-         h2(ng-bind="review.title")
+//-         div(ng-bind-html="review.review")
+//-         a(href="https://itunes.apple.com/gb/app/duolingo-learn-languages-for/id570060128?mt=8", target="_blank", onclick="_gaq.push(['_trackEvent','app_link','Duolingo'])").btn View App
 
-section.landing
-  .wrapper
-    h1.landing-header Appinionated
-    p.landing-desc
-      | We feature only the best designed apps for the iPhone.
+div(infinite-scroll="addReviews()", class="scroll-loader", can-load="canLoad", threshold="100", style="height: {{pageHeight}}")
+  .container.home
+    header.header
+      .wrapper
+        a(href="/") Home
+        a(href="/#tags") Tags
+        a(href="/#submit") Submit
 
-    //- .follow-btn
-    //-   a(href="https://twitter.com/appinionated_", data-show-count="false", data-lang="en").twitter-follow-button Follow @appinionated_
+    section.landing
+      .wrapper
+        h1.landing-header Appinionated
+        p.landing-desc
+          | We feature only the best designed apps for the iPhone.
 
-    //- .social-links
-    //-   .fb-like(data-href="http://www.appinionated.co.uk/", data-colorscheme="light", data-layout="button_count", data-action="like", data-show-faces="false", data-send="false")
-    //-   a(href="https://twitter.com/share", data-url="http://www.appinionated.co.uk/", data-via="appinionated_").twitter-share-button Tweet
+        //- .follow-btn
+        //-   a(href="https://twitter.com/appinionated_", data-show-count="false", data-lang="en").twitter-follow-button Follow @appinionated_
 
-    p
-      a(href="mailto:submit@appinionated.co.uk?subject=Here's%20my%20app&body=Remember to send us a redeem code if it's a priced app.").mail-to
-        |Send us your app
+        //- .social-links
+        //-   .fb-like(data-href="http://www.appinionated.co.uk/", data-colorscheme="light", data-layout="button_count", data-action="like", data-show-faces="false", data-send="false")
+        //-   a(href="https://twitter.com/share", data-url="http://www.appinionated.co.uk/", data-via="appinionated_").twitter-share-button Tweet
 
-  //- .keyboard-nav
-  //-   .up
-  //-     i.icon-arrow-up
-  //-   .left
-  //-   .down
-  //-     i.icon-arrow-down
-  //-   .right
+        p
+          a(href="mailto:submit@appinionated.co.uk?subject=Here's%20my%20app&body=Remember to send us a redeem code if it's a priced app.").mail-to
+            |Send us your app
 
-  a(href="/#tall-chess").phone--top
-  a(href="/#thinglist").phone--bottom
-  //- .arrow-down.js-review-first
+      //- .keyboard-nav
+      //-   .up
+      //-     i.icon-arrow-up
+      //-   .left
+      //-   .down
+      //-     i.icon-arrow-down
+      //-   .right
 
+      a(href="/#tall-chess").phone--top
+      a(href="/#thinglist").phone--bottom
+      //- .arrow-down.js-review-first
 
-section(ng-repeat="review in reviews", style="background-color: #{{review.colorBg}}; color: #{{review.colorText}};", ng-if="review.published").review.review--portrait.review--phone--dark
-  .review__preview
-    .wrapper
-      .review__images
-        .review__image__wrapper
-          ul.slides
-            li(ng-repeat="image in review.images track by $index")
-              img(src="{{image}}")
-      .review__desc
-        h2(ng-bind="review.title")
-        div(ng-bind-html="review.review")
-        a(href="https://itunes.apple.com/gb/app/duolingo-learn-languages-for/id570060128?mt=8", target="_blank", onclick="_gaq.push(['_trackEvent','app_link','Duolingo'])").btn View App
+  section(ng-repeat="review in reviews", style="background-color: #{{review.colorBg}}; color: #{{review.colorText}};", ng-if="review.published").review.review--portrait.review--phone--dark
+    .review__preview
+      .wrapper
+        .review__images
+          .review__image__wrapper
+            ul.slides
+              li(ng-repeat="image in review.images track by $index")
+                img(src="{{image}}")
+        .review__desc
+          h2(ng-bind="review.title")
+          div(ng-bind-html="review.review")
+          a(href="https://itunes.apple.com/gb/app/duolingo-learn-languages-for/id570060128?mt=8", target="_blank", onclick="_gaq.push(['_trackEvent','app_link','Duolingo'])").btn View App
+
+  //- section(ng-repeat="review in reviews").review.review--portrait.review--phone--dark
+  //-   .review__preview
+  //-     .wrapper
+  //-       .review__images
+  //-         .review__image__wrapper
+  //-           ul.slides
+  //-       .review__desc

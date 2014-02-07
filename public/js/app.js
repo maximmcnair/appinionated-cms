@@ -5,6 +5,7 @@ angular.module('myApp',
   [ 'ngRoute'
   , 'ngResource'
   , 'ngSanitize'
+  , 'infiniteScroll'
   ]).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
@@ -13,10 +14,10 @@ angular.module('myApp',
         templateUrl  : 'templates/index',
         controller   : 'HomeCtrl'
       })
-      .when('/review/:slug', {
-        templateUrl  : 'templates/index',
-        controller   : 'ReviewCtrl'
-      })
+      // .when('/review/:slug', {
+      //   templateUrl  : 'templates/index',
+      //   controller   : 'ReviewCtrl'
+      // })
       .otherwise({
         redirectTo: '/'
       })

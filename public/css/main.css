@@ -123,3 +123,7 @@ input:focus{background-color:#233f56}
 .submit small{margin-top:25px;display:block}
 .submit .btn:hover{background:#233f56}
 .follow-btn{margin-top:35px}
+.pull-left{float:left}
+.pull-right{float:right}
+.no-margin-top{margin-top:0}
+.scroll-loader{display:block;overflow:scroll}
