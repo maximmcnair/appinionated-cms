@@ -17,6 +17,8 @@ img.alignright{float:right;margin-left:15px}
 body{font-family:"proxima-nova-soft",sans-serif}
 h1{margin:0;font-size:18px}
 h2{font-size:45px}
+a{text-decoration:none;color:#59646f;font-weight:800;font-szie:18px;cursor:pointer;-webkit-transition:color .3s;-moz-transition:color .3s;-o-transition:color .3s;-ms-transition:color .3s;transition:color .3s;}
+a:hover{color:#fff}
 body{color:#fff;background-color:#233445;margin:0}
 .wrapper{max-width:940px;margin:0 auto;zoom:1}
 .wrapper:before,.wrapper:after{content:"";display:table}
@@ -48,7 +50,9 @@ input[type=checkbox]:checked:before{content:'\f00c';left:9px}
 .checkbox strong{vertical-align:13px;margin-left:8px;display:inline}
 .header-main{height:21px;padding:14px 0;background-color:#1b2734}
 .header__title{float:left;margin:0}
-.header__review-add{float:right;margin:0}
+.header__nav{float:right;margin:0;}
+.header__nav i{margin-right:5px}
+.header__signout{margin-left:25px}
 .review__preview{padding:20px 0;-webkit-transition:background-color .3s;-moz-transition:background-color .3s;-o-transition:background-color .3s;-ms-transition:background-color .3s;transition:background-color .3s;margin-bottom:20px;cursor:pointer}
 .review__title{margin:0}
 .review-add{height:0;-webkit-transition:height .3s;-moz-transition:height .3s;-o-transition:height .3s;-ms-transition:height .3s;transition:height .3s;overflow:hidden}
