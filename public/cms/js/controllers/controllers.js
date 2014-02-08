@@ -1,7 +1,7 @@
 'use strict';
 
 
-function HomeCtrl($scope, ReviewFactory) {
+function HomeCtrl($scope, ReviewFactory, $upload) {
   $scope.reviews = ReviewFactory.get({},function (res) {
     // console.log(raps)
   })
@@ -11,6 +11,7 @@ function HomeCtrl($scope, ReviewFactory) {
   , review: '<p>Write your review here.</p>'
   , colorBg: 'ffffff'
   , colorText: '454545'
+  , images: []
   }
 
   $scope.newReview = reviewTemp
@@ -26,6 +27,29 @@ function HomeCtrl($scope, ReviewFactory) {
       $scope.showAddReviewWidget = false
       $scope.reviews.push(newReview)
     })
+  }
+
+  //========================================================
+  //  File Upload
+  //========================================================
+  $scope.upload = []
+  $scope.onFileSelect = function ($files) {
+    // loop through files
+    for (var i = 0; i < $files.length; i++) {
+      console.log('$files[i]', $files[i])
+      // upload file using $upload
+      $scope.upload[i] = $upload.upload({
+        url: '/api/file/upload'
+      , data: {myObj: $files[i]}
+      , file: $files[i]
+      }).progress(function(evt) {
+        console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
+      }).success(function(data, status, headers, config) {
+        // file is uploaded successfully
+        console.log('success', data)
+        $scope.newReview.images.push(data.path)
+      })
+    }
   }
 
   //========================================================
