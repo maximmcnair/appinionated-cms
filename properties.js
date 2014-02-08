@@ -14,6 +14,9 @@ var _ = require('lodash')
   , properties =
     { development:
       { port: 4100
+      }
+    { production:
+      { port: 4100
       , db: 'leonardo:y82gT7B1u8EMq5t@troup.mongohq.com:10041/appinionated'
       }
     }
