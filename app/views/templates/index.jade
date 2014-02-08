@@ -11,7 +11,7 @@
 //-         div(ng-bind-html="review.review")
 //-         a(href="https://itunes.apple.com/gb/app/duolingo-learn-languages-for/id570060128?mt=8", target="_blank", onclick="_gaq.push(['_trackEvent','app_link','Duolingo'])").btn View App
 
-div(infinite-scroll="addReviews()", class="scroll-loader", can-load="canLoad", threshold="80")
+div(infinite-scroll="addReviews()", class="scroll-loader", can-load="canLoad", threshold="80", style="height: {{pageHeight}}")
   .container.home
     //- header.header
     //-   .wrapper
