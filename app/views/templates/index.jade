@@ -11,7 +11,7 @@
 //-         div(ng-bind-html="review.review")
 //-         a(href="https://itunes.apple.com/gb/app/duolingo-learn-languages-for/id570060128?mt=8", target="_blank", onclick="_gaq.push(['_trackEvent','app_link','Duolingo'])").btn View App
 
-div(infinite-scroll="addReviews()", class="scroll-loader", can-load="canLoad", threshold="80", style="height: {{pageHeight}}")
+div(infinite-scroll="addReviews()", class="scroll-loader", can-load="canLoad", threshold="80")
   .container.home
     //- header.header
     //-   .wrapper
@@ -19,11 +19,11 @@ div(infinite-scroll="addReviews()", class="scroll-loader", can-load="canLoad", t
     //-     a(href="/#tags") Tags
     //-     a(href="/#submit") Submit
 
-    section.landing
+    section.landing(style="height: {{pageHeight}}")
       .wrapper
         h1.landing-header Appinionated
         p.landing-desc
-          | We feature only the best designed apps for the iPhone.
+          | Featuring only the best designed apps for the iPhone.
 
         //- .follow-btn
         //-   a(href="https://twitter.com/appinionated_", data-show-count="false", data-lang="en").twitter-follow-button Follow @appinionated_
