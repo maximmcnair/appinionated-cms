@@ -35,7 +35,8 @@ input:focus{background-color:#233f56}
 .review--text--light a.btn,.review--text--light .btn{background-color:rgba(255,255,255,0.6);}
 .review--text--light a.btn:hover,.review--text--light .btn:hover{background-color:rgba(255,255,255,0.8)}
 .flex-control-nav,.flex-direction-nav{display:none}
-.slides{overflow:hidden}
+.slides{overflow:hidden;list-style-type:none;padding:0;margin:0;}
+.slides li{padding:0;margin:0}
 @media screen and (max-width: 700px){.review__image__wrapper{display:block;margin:0 auto 25px auto;width:182px}
 }@media screen and (min-width: 700px){.review__images{width:48.93617021276596%;margin:0 2.127659574468085% 0 0;float:left}
 .review__desc{width:48.93617021276596%;float:right;margin:0;}

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('myApp')
-  .controller('HomeCtrl', function ($scope, ReviewFactory, $window) {
+  .controller('HomeCtrl', function ($scope, ReviewFactory, $window, $timeout) {
     $scope.count = 0
     $scope.reviews = []
     $scope.canLoad = true

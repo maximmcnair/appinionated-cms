@@ -48,14 +48,14 @@ div(infinite-scroll="addReviews()", class="scroll-loader", can-load="canLoad", t
       a(href="/#thinglist").phone--bottom
       //- .arrow-down.js-review-first
 
-  section(ng-repeat="review in reviews", style="background-color: #{{review.colorBg}}; color: #{{review.colorText}}; height: {{pageHeight}}", ng-if="review.published").review.review--portrait.review--phone--dark
+  section(ng-repeat="review in reviews", style="background-color: #{{review.colorBg}}; color: #{{review.colorText}}; height: {{pageHeight}}").review.review--portrait.review--phone--dark
     .review__preview
       .wrapper
         .review__images
           .review__image__wrapper
-            ul.slides
-              li(ng-repeat="image in review.images track by $index")
-                img(src="{{image}}")
+            ul(gallery, images="review.images").slides
+              li(ng-repeat="image in review.images track by $index", ng-show="selectedImage==$index")
+                img(ng-src="{{image}}")
         .review__desc
           h2(ng-bind="review.title")
           div(ng-bind-html="review.review")
