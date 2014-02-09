@@ -43,7 +43,7 @@ angular.module('myApp')
           var newReview = new ReviewFactory(data)
           newReview.$update({}, function (res) {
             scope.modelChanged = false
-            console.log('success', res)
+            // console.log('success', res)
           })
         }
 
@@ -54,17 +54,17 @@ angular.module('myApp')
         scope.onFileSelect = function ($files) {
           // loop through files
           for (var i = 0; i < $files.length; i++) {
-            console.log('$files[i]', $files[i])
+            // console.log('$files[i]', $files[i])
             // upload file using $upload
             scope.upload[i] = $upload.upload({
               url: '/api/file/upload'
             , data: {myObj: $files[i]}
             , file: $files[i]
             }).progress(function(evt) {
-              console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
+              // console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
             }).success(function(data, status, headers, config) {
               // file is uploaded successfully
-              console.log('success', data)
+              // console.log('success', data)
               scope.review.images.push(data.path)
               scope.updateReview(scope.review)
             })

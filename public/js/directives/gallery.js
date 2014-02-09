@@ -9,7 +9,7 @@ angular.module('myApp')
     , scope: true
     , link: function (scope, element, attrs) {
       // console.log('gallery init')
-      console.log('scope:', scope)
+      // console.log('scope:', scope)
       // console.log('scope.selectedImage:', scope.selectedImage)
       scope.selectedImage = 0
       var changeImg = function () {
@@ -21,7 +21,7 @@ angular.module('myApp')
             scope.selectedImage++
           }
         })
-        console.log('scope.selectedImage', scope.selectedImage)
+        // console.log('scope.selectedImage', scope.selectedImage)
         $timeout(function() {
           changeImg()
         }, 1000)

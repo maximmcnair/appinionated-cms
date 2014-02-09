@@ -22,7 +22,7 @@ function HomeCtrl($scope, ReviewFactory, $upload) {
   $scope.postReview = function (data) {
     var newReview = new ReviewFactory(data)
     newReview.$save({}, function (res) {
-      console.log('success', res)
+      // console.log('success', res)
       $scope.newReview = reviewTemp
       $scope.showAddReviewWidget = false
       $scope.reviews.push(newReview)
@@ -36,17 +36,17 @@ function HomeCtrl($scope, ReviewFactory, $upload) {
   $scope.onFileSelect = function ($files) {
     // loop through files
     for (var i = 0; i < $files.length; i++) {
-      console.log('$files[i]', $files[i])
+      // console.log('$files[i]', $files[i])
       // upload file using $upload
       $scope.upload[i] = $upload.upload({
         url: '/api/file/upload'
       , data: {myObj: $files[i]}
       , file: $files[i]
       }).progress(function(evt) {
-        console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
+        // console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
       }).success(function(data, status, headers, config) {
         // file is uploaded successfully
-        console.log('success', data)
+        // console.log('success', data)
         $scope.newReview.images.push(data.path)
       })
     }
