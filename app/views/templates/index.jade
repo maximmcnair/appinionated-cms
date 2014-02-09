@@ -59,7 +59,7 @@ div(infinite-scroll="addReviews()", class="scroll-loader", can-load="canLoad", t
         .review__desc
           h2(ng-bind="review.title")
           div(ng-bind-html="review.review")
-          a(href="{{review.hrefStore}}", target="_blank").btn View App
+          a(href="{{review.hrefStore}}", target="_blank", style="color: #{{review.colorBg}};").btn View App
 
   //- section(ng-repeat="review in reviews").review.review--portrait.review--phone--dark
   //-   .review__preview
