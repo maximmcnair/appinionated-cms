@@ -28,28 +28,36 @@ module.exports = function (app, options) {
 
   // Post Project
   app.post(url, function (req, res) {
-    var newReview = new ReviewModel(req.body)
-    newReview.save(function (err) {
-      if(err) res.json(err, 404)
-      res.json(newReview, 201)
-    })
+    if (req.isAuthenticated()) {
+      var newReview = new ReviewModel(req.body)
+      newReview.save(function (err) {
+        if(err) res.json(err, 404)
+        res.json(newReview, 201)
+      })
+    } else {
+      res.json(401)
+    }
   })
 
   // Update Project
   app.put(url, function (req, res) {
-    ReviewModel.findById(req.body._id, function (err, review) {
-      if(err) return res.json(err, 404)
-      if(review){
-        var key
-        for (key in req.body) {
-          review[key] = req.body[key]
+    if (req.isAuthenticated()) {
+      ReviewModel.findById(req.body._id, function (err, review) {
+        if(err) return res.json(err, 404)
+        if(review){
+          var key
+          for (key in req.body) {
+            review[key] = req.body[key]
+          }
+          review.save(function (err) {
+            if(err) res.json(err, 404)
+            res.json(review, 201)
+          })
         }
-        review.save(function (err) {
-          if(err) res.json(err, 404)
-          res.json(review, 201)
-        })
-      }
-    })
+      })
+    } else {
+      res.json(401)
+    }
   })
 
 }
