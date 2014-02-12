@@ -4,9 +4,9 @@ block auth
   form(action='/auth/log-in', method='post').login-form.js-login-form
     h2.title--centered Appinionated Login
     label(for='email').form-label
-      input(type="text", name="email", placeholder="Email", tabindex="1", value="leonardofox@gmail.com").input-top.js-login-email
+      input(type="text", name="email", placeholder="Email", tabindex="1").input-top.js-login-email
       i.fa.fa-user
     label(for='password').form-label
-      input(type="password", name="password", placeholder="Password", tabindex="2", value="password").input-btm.js-login-password
+      input(type="password", name="password", placeholder="Password", tabindex="2").input-btm.js-login-password
       i.fa.fa-key
     button(type='submit').btn Login
